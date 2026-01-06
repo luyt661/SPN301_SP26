@@ -1,29 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Footer from './components/Footer'
-import Headers from './components/header.jsx'
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import About from "./components/About";
+import Contact from "./components/Contact";
+
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Headers />
+      <Header />
 
-      {/* MAIN CONTENT */}
-      <main className="text-center py-16">
-        <h1 className="text-4xl font-bold mb-4">
-          Hello Vite + React!
-        </h1>
-        <p className="text-gray-600">
-          day la bai hoc ex2 ve Vite
-        </p>
-      </main>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <main className="text-center py-5">
+              <h1>Hello Vite + React!</h1>
+              <p>Đây là bài học ex2 về Vite</p>
+            </main>
+          }
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
 
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
-
+export default App;

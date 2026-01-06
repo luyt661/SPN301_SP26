@@ -1,7 +1,8 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -10,32 +11,38 @@ function Header() {
       variant="light"
       expand="lg"
       className="border-bottom"
-      style={{ borderColor: '#ccc' }}
+      style={{ borderColor: "#ccc" }}
     >
       <Container>
         {/* Brand */}
-        <Navbar.Brand href="#home" className="text-dark fw-bold">
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          className="text-dark fw-bold"
+        >
           My Website
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle />
 
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse>
           {/* Menu */}
           <Nav className="me-auto">
-            <Nav.Link href="#home" className="text-dark">
+            <Nav.Link as={Link} to="/" className="text-dark">
               Home
             </Nav.Link>
-            <Nav.Link href="#about" className="text-dark">
+            <Nav.Link as={Link} to="/about" className="text-dark">
               About
             </Nav.Link>
-            <Nav.Link href="#contact" className="text-dark">
+            <Nav.Link as={Link} to="/contact" className="text-dark">
               Contact
             </Nav.Link>
           </Nav>
 
           {/* Button */}
-          <Button variant="outline-secondary">Get Started</Button>
+          <Button variant="outline-secondary">
+            Get Started
+          </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
