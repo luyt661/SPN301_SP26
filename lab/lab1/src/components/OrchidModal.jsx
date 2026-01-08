@@ -23,9 +23,9 @@ function OrchidModal({ show, handleClose, orchid }) {
         <p>
           <strong>Special:</strong>{" "}
           {orchid.isSpecial ? (
-            <Badge bg="success">Yes</Badge>
+            <Badge bg="success">True</Badge>
           ) : (
-            <Badge bg="secondary">No</Badge>
+            <Badge bg="secondary">False</Badge>
           )}
         </p>
         <p className="text-danger fw-bold">
