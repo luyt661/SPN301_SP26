@@ -30,7 +30,7 @@ function ListOfOrchid() {
               orchidName={o.orchidName}
               description={o.description}
               image={o.image}
-              onDetail={() => handleShow(o)}   // ✅ QUAN TRỌNG
+              onDetail={() => handleShow(o)}   
             />
           </Col>
         ))}
@@ -38,7 +38,7 @@ function ListOfOrchid() {
 
       <OrchidModal
         show={show}
-        onClose={handleClose}   // ✅ TRÙNG TÊN
+        onClose={handleClose}   
         orchid={selectedOrchid}
       />
     </>

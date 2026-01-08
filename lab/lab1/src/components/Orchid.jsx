@@ -25,7 +25,7 @@ function Orchid({ id, orchidName, description, image, onDetail }) {
         <Button
           variant="primary"
           className="mt-auto"
-          onClick={onDetail}   // ✅ callback
+          onClick={onDetail}   
         >
           Detail
         </Button>
