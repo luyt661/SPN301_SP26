@@ -1,48 +1,34 @@
 import Card from "react-bootstrap/Card";
-import Badge from "react-bootstrap/Badge";
-// hien thi usestate de hien thi hop thoai modal
-function Orchid({ id, orchidName, description, category, isSpecial, price, image }) {
+import Button from "react-bootstrap/Button";
+
+function Orchid({ id, orchidName, description, image, onDetail }) {
   return (
-    <Card className="shadow-sm">
+    <Card className="shadow-sm h-100 text-center">
       <Card.Img
         variant="top"
         src={image}
         alt={orchidName}
+        style={{ height: "200px", objectFit: "cover" }}
       />
 
-      <Card.Body>
-        <Card.Title className="d-flex flex-column gap-1">
+      <Card.Body className="d-flex flex-column">
+        <small className="text-muted">ID: {id}</small>
 
-          <small className="text-muted">
-            ID: {id}
-          </small>
+        <Card.Title className="mt-1">{orchidName}</Card.Title>
 
-          <span className="fw-bold fs-5">
-            {orchidName}
-          </span>
-
-          <span className="text-muted">
-            Special:{" "}
-            {isSpecial ? (
-              <Badge bg="success">True</Badge>
-            ) : (
-              <Badge bg="secondary">False</Badge>
-            )}
-          </span>
-
-          <span className="text-danger fw-semibold">
-            Price: {price.toLocaleString()} VND
-          </span>
-
-        </Card.Title>
-
-        <Card.Subtitle className="mb-2 text-muted">
-          Category: {category}
-        </Card.Subtitle>
-
-        <Card.Text style={{ textAlign: "justify" }}>
-          {description}
+        <Card.Text className="text-muted small mb-3">
+          {description.length > 60
+            ? description.substring(0, 60) + "..."
+            : description}
         </Card.Text>
+
+        <Button
+          variant="primary"
+          className="mt-auto"
+          onClick={onDetail}   // ✅ callback
+        >
+          Detail
+        </Button>
       </Card.Body>
     </Card>
   );

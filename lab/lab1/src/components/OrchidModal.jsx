@@ -2,11 +2,11 @@ import Modal from "react-bootstrap/Modal";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 
-function OrchidModal({ show, handleClose, orchid }) {
+function OrchidModal({ show, onClose, orchid }) {
   if (!orchid) return null;
 
   return (
-    <Modal show={show} onHide={handleClose} centered>
+    <Modal show={show} onHide={onClose} centered>
       <Modal.Header closeButton>
         <Modal.Title>{orchid.orchidName}</Modal.Title>
       </Modal.Header>
@@ -20,6 +20,7 @@ function OrchidModal({ show, handleClose, orchid }) {
 
         <p><strong>Description:</strong> {orchid.description}</p>
         <p><strong>Category:</strong> {orchid.category}</p>
+
         <p>
           <strong>Special:</strong>{" "}
           {orchid.isSpecial ? (
@@ -28,13 +29,14 @@ function OrchidModal({ show, handleClose, orchid }) {
             <Badge bg="secondary">False</Badge>
           )}
         </p>
+
         <p className="text-danger fw-bold">
           Price: {orchid.price.toLocaleString()} VND
         </p>
       </Modal.Body>
 
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button variant="secondary" onClick={onClose}>
           Close
         </Button>
       </Modal.Footer>
