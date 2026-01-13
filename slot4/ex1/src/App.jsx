@@ -6,7 +6,7 @@ import orchids from "./data/orchids";
 import Container from "react-bootstrap/Container";
 
 function App() {
-  // 🔥 THIẾU DÒNG NÀY → gây lỗi
+  
   const [searchText, setSearchText] = useState("");
 
   return (
