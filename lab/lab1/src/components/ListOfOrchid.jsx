@@ -1,47 +1,32 @@
-import { useState } from "react";
-import orchids from "../data/orchids";
-import Orchid from "./Orchid";
-import OrchidModal from "./OrchidModal";
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import Orchid from './Orchid.jsx';
 
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-
-function ListOfOrchid() {
-  const [show, setShow] = useState(false);
-  const [selectedOrchid, setSelectedOrchid] = useState(null);
-
-  const handleShow = (orchid) => {
-    setSelectedOrchid(orchid);
-    setShow(true);
-  };
-
-  const handleClose = () => {
-    setShow(false);
-    setSelectedOrchid(null);
-  };
-
+function ListOfOrchid({ orchids }) {
   return (
-    <>
-      <Row>
-        {orchids.map((o) => (
-          <Col md={4} className="mb-4" key={o.id}>
+    <Container className="py-5">
+      <Row className="g-4">
+        {orchids.map((orchid) => (
+          <Col
+            key={orchid.id}
+            xs={12}
+            sm={6}
+            md={4}
+            lg={3}
+            className="d-flex"
+          >
             <Orchid
-              id={o.id}
-              orchidName={o.orchidName}
-              description={o.description}
-              image={o.image}
-              onDetail={() => handleShow(o)}   
+              orchidName={orchid.orchidName}
+              description={orchid.description}
+              category={orchid.category}
+              isSpecial={orchid.isSpecial}
+              image={orchid.image}
+              price={orchid.price}
             />
           </Col>
         ))}
       </Row>
-
-      <OrchidModal
-        show={show}
-        onClose={handleClose}   
-        orchid={selectedOrchid}
-      />
-    </>
+    </Container>
   );
 }
 
