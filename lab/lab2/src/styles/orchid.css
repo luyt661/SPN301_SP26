@@ -1,0 +1,37 @@
+.orchid-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.orchid-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.special-badge-corner {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #22c55e;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+.orchid-title {
+  font-weight: 600;
+}
+
+.orchid-price {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.detail-btn {
+  width: 100%;
+}
