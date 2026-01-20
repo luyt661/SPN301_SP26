@@ -8,22 +8,15 @@ import Contact from "./components/Contact";
 import OrchidDetail from "./components/OrchidDetail";
 import orchids from "./data/orchids";
 
-import Login from "./pages/login"; 
+import Login from "./pages/login";
+import { useLogin } from "./context/LoginContext";
 
 function App() {
   const [searchText, setSearchText] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleLoginSuccess = () => {
-    setIsLoggedIn(true);
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
+  const { isLoggedIn } = useLogin();
 
   if (!isLoggedIn) {
-    return <Login onLogin={handleLoginSuccess} />;
+    return <Login />;
   }
 
   return (
@@ -33,7 +26,6 @@ function App() {
           <MainLayout
             searchText={searchText}
             setSearchText={setSearchText}
-            onLogout={handleLogout}
           />
         }
       >
@@ -62,4 +54,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;   

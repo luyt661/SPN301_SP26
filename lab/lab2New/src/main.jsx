@@ -4,11 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from "react-router-dom";
 import './index.css'
 import App from './App.jsx'
+import { LoginProvider } from "./context/LoginContext";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <LoginProvider>
+        <App />
+      </LoginProvider>
     </BrowserRouter>
-  </StrictMode>,
-)
+  </StrictMode>
+);
+

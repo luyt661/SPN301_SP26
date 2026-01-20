@@ -1,21 +1,22 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useLogin } from "../context/LoginContext"; // 👈 thêm dòng này
 
-function MainLayout({ searchText, setSearchText, setIsLoggedIn }) {
+function MainLayout({ searchText, setSearchText }) {
+  const { logout } = useLogin(); // 👈 lấy logout từ context
+
   return (
     <div className="d-flex flex-column min-vh-100">
       <Header
         searchText={searchText}
         onSearchChange={setSearchText}
-        onLogout={() => setIsLoggedIn(false)}
+        onLogout={logout}   // 👈 đổi chỗ này
       />
 
       <main className="flex-grow-1 py-4">
         <Container>
-          {/* Nơi hiển thị nội dung các trang con */}
           <Outlet />
         </Container>
       </main>

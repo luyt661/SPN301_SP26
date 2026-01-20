@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import { useLogin as useLoginContext } from "../context/LoginContext";
 
-export function useLogin(onLogin) {
+export function useLogin() {
   const navigate = useNavigate();
+  const { login } = useLoginContext(); // 🔥 lấy từ context
 
-  const login = async (state, dispatch) => {
-    // ✅ Validate rỗng ở đây
+  const handleLogin = async (state, dispatch) => {
     let fieldErrors = {
       username: "",
       password: "",
@@ -33,7 +34,7 @@ export function useLogin(onLogin) {
 
     if (state.username === "Admin" && state.password === "123456") {
       dispatch({ type: "LOGIN_SUCCESS" });
-      onLogin();
+      login();            // ✅ cập nhật context
       navigate("/");
     } else {
       dispatch({
@@ -47,5 +48,5 @@ export function useLogin(onLogin) {
     }
   };
 
-  return { login };
+  return { login: handleLogin };
 }
