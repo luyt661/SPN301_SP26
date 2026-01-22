@@ -1,0 +1,70 @@
+{
+  "orchids": [
+    {
+      "orchidName": "Ceasar 4N",
+      "category": "Dendrobium",
+      "price": 250000,
+      "description": "Beautiful Dendrobium orchid",
+      "isSpecial": true,
+      "image": "images/hoalan1.jpeg",
+      "id": 1
+    },
+    {
+      "orchidName": "Golden Stars",
+      "category": "Cattleya",
+      "price": 180000,
+      "image": "images/hoalan2.jpeg",
+      "id": 2
+    },
+    {
+      "orchidName": "White stars ",
+      "category": "Phalaenopsis",
+      "price": "3000000",
+      "image": "images/hoalan3.jpeg",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "orchidName": "Pink Lady",
+      "description": "Soft pink orchid.",
+      "category": "Vanda",
+      "isSpecial": false,
+      "price": 220000,
+      "image": "images/hoalan4.jpeg"
+    },
+    {
+      "id": 5,
+      "orchidName": "Purple Queen",
+      "description": "Royal purple orchid.",
+      "category": "Dendrobium",
+      "isSpecial": true,
+      "price": 270000,
+      "image": "images/hoalan5.jpeg"
+    },
+    {
+      "id": 6,
+      "orchidName": "Snow White",
+      "description": "Pure white premium orchid.",
+      "category": "Phalaenopsis",
+      "isSpecial": false,
+      "price": 320000,
+      "image": "images/hoalan6.jpeg"
+    },
+    {
+      "id": 7,
+      "orchidName": "Snow White",
+      "description": "Pure white premium orchid.",
+      "category": "Phalaenopsis",
+      "isSpecial": false,
+      "price": 320000,
+      "image": "images/A2.jpeg"
+    },
+    {
+      "orchidName": "Snow black",
+      "category": "haramimory",
+      "price": "300000",
+      "image": "images/A1.jpeg",
+      "id": 8
+    }
+  ]
+}
